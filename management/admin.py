@@ -13,7 +13,7 @@ admin.site.register(Inventory)
 
 @admin.register(Supplier)
 class SupplierAdmin(admin.ModelAdmin):
-    list_display = ('company_name', 'contact_first_name', 'contact_last_name', 'email_address', 'country')
+    list_display = ('company_name', 'contact_first_name', 'contact_last_name', 'email_address', 'city', 'country')
     search_fields = ('company_name', 'contact_first_name', 'contact_last_name')
     list_filter = ('country', 'city')
     list_display_links = ('company_name',)
