@@ -1,0 +1,28 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# --- Environment variables ---
+.env
+*.env
+
+# IDE and editor settings
+.idea/
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Logs and misc
+*.log
+
+# Local data / experiments
+*.csv
+*.sqlite3
+*.db
