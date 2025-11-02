@@ -13,6 +13,7 @@ class Inventory(models.Model):
         db_table = 'inventory'
         ordering = ['inventory_id']
         verbose_name = 'Inventory'
+        verbose_name_plural = 'Inventories'
         indexes = [
             models.Index(fields=['expected_qty']),
             models.Index(fields=['actual_qty']),
