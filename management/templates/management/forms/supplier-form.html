@@ -1,0 +1,22 @@
+<div class="modal-backdrop"
+     style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);
+            display:flex;justify-content:center;align-items:center;"
+     hx-on="click: this.remove()">
+
+  <div class="modal-content"
+       style="background:#fff;padding:20px;border-radius:8px;min-width:450px;max-height:90vh;overflow:auto;"
+       hx-on="click: event.stopPropagation()">
+
+    <h3>Add New Supplier</h3>
+
+    <form hx-post="{% url 'supplier_form' %}"
+          hx-target="#supplier-table"
+          hx-swap="outerHTML">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+        <button type="button" hx-on="click: this.closest('.modal-backdrop').remove()">Cancel</button>
+    </form>
+
+  </div>
+</div>

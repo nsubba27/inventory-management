@@ -1,0 +1,30 @@
+<table>
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Contact Person</th>
+                <th>Title</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Fax Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for supplier in suppliers %}
+            <tr>
+                <td>{{ supplier.company_name }}</td>
+                <td>{{ supplier.contact_first_name }} {{ supplier.contact_last_name }}</td>
+                <td>{{ supplier.title }}</td>
+                <td>{{ supplier.email_address }}</td>
+                <td>{{ supplier.primary_phone_number }}</td>
+                <td>{{ supplier.address }} {{ supplier.city }} {{ supplier.country }} {{ supplier.zip_code }}</td>
+                <td>{{ supplier.fax_address }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" style="text-align:center;">No suppliers found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>

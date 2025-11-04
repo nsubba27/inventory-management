@@ -10,6 +10,62 @@
 
 </head>
 <body>
+<div id="body-container">
+<header id="header">
+    <div class="logo">ManageMe</div>
+    <div class="user-side">
+        <div class="user-img">
+            <img class="profile-img" src="{% static 'images/avatar.png' %}" alt="user-profile">
+        </div>
+        <div class="user-name-holder">
+            <p class="user-name">Nishan</p>
+        </div>
+    </div>
+</header>
+<div class="main-container">
+    <aside class="side-bar">
+    <ul class="side-nav-lists">
+        <li class="nav-lists">
+            <a href="{% url 'dashboard' %}"
+               hx-get="{% url 'dashboard' %}"
+               hx-target="#main-block"
+               hx-swap="innerHTML"
+            hx-push-url="true">
+                Dashboard
+            </a>
+        </li>
+        <li class="nav-lists">
+            Inventory
+        </li>
+        <li class="nav-lists">
+            Logs
+        </li>
+        <li class="nav-lists">
+            Order
+        </li>
+        <li class="nav-lists">
+            <a href="{% url 'supplier_list' %}"
+               hx-get="{% url 'supplier_list' %}"
+               hx-target="#main-block"
+               hx-swap="innerHTML"
+                hx-push-url="true">
+                Suppliers
+            </a>
+        </li>
+    </ul>
+</aside>
+
+    <main class="main-section" id="main-block">
+        {% block main %}
+        {% endblock %}
+        {% include 'partials/dashboard.html' %}
+    </main>
+</div>
+
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
+<script src="https://unpkg.com/hyperscript.org"></script>
 
 </body>
 </html>

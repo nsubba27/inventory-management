@@ -1,0 +1,31 @@
+.dashboard-container {
+    width: 100%;
+}
+
+.grid-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    background-color: #8b92e3;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    min-height: 200px;
+}
+
+.card-header {
+    font-size: 50px;
+}
+
+.card-content {
+    font-size: 30px;
+}
